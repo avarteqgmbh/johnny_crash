@@ -4,6 +4,19 @@ h2. Purpose
 
 This is meant to receive errors delivered by Android apps using https://github.com/ACRA/acra.
 
-h2. Installation
+h2. Server Side Installation
 
 Don't forget to copy config/authentication.yml.example and adapt config/authentication.yml
+
+h2. Android Installation
+
+See https://github.com/ACRA/acra.
+
+Also add the following custom fields in your App class (the one that is extending Application):
+
+pre. Map<ReportField, String> mapping = new HashMap<ReportField, String>();
+mapping.put(ReportField.APP_VERSION_CODE, "APP_VERSION_CODE");
+mapping.put(ReportField.APP_VERSION_NAME, "APP_VERSION_NAME");
+ErrorReporter errorReporter = ACRA.getErrorReporter();
+errorReporter.setReportSender(sender);
+
