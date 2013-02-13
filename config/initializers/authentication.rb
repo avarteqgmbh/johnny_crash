@@ -1,0 +1,1 @@
+AUTHENTICATION = YAML.load(File.open(Rails.root.to_s + '/config/authentication.yml'))

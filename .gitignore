@@ -1,0 +1,35 @@
+.rvmrc
+.rbenv-version
+.bundle
+.autotest 
+.idea
+nbproject
+
+config/database.yml
+db/*.sqlite3
+log/*.log
+pkg
+tmp/**/*
+tmp/*.pdf
+capybara-*
+.rake_tasks~
+rerun.txt
+
+.bundle/**
+.bundle
+spec/rails_app/db/*.sqlite3
+spec/rails_app/log/*.log
+spec/rails_app/tmp/**/*
+vendor/plugins/*
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+print.css.css
+public/system
+db/.~lock*
+config/authentication.yml

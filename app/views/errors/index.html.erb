@@ -1,0 +1,15 @@
+<h1>Errors</h1>
+
+<table class="table">
+  <tr>
+    <th>Header</th>
+    <th></th>
+  </tr>
+  
+  <% @errors.each do |error| %>
+    <tr>
+      <td><%= error.created_at %></td>
+      <td><%= link_to "View", error, class: 'btn' %></td>
+    </tr>
+  <% end %>
+</table>
