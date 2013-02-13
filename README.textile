@@ -1,0 +1,9 @@
+h1. Johnny Crash
+
+h2. Purpose
+
+This is meant to receive errors delivered by Android apps using https://github.com/ACRA/acra.
+
+h2. Installation
+
+Don't forget to copy config/authentication.yml.example and adapt config/authentication.yml

@@ -1,3 +1,22 @@
+<div class="row-fluid">
+  <div class="span12">
+    <table class="table">
+      <% %w(ANDROID_VERSION PHONE_MODEL APP_VERSION_NAME APP_VERSION_CODE).each do |key|%>
+        <tr>        
+          <th><%= key.humanize%></th><td><%= @json[key]%></td>
+        </tr>
+      <% end %>
+      <tr>
+        <th colspan="2">Stack trace</th>
+      </tr>
+      <tr>
+        <td colspan="2"><pre class="pre-scrollable prettyprint"><%= @json["STACK_TRACE"]%></pre></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
 <pre class="prettyprint" style="padding: 5px;">
-  <%=raw JSON.pretty_generate(JSON.parse(@error.payload)) %>
+  <%=raw JSON.pretty_generate(@json) %>
+  <%#raw @error.payload %>
 </pre>
