@@ -3,15 +3,19 @@
 <table class="table">
   <tr>
     <th>Created At</th>
+    <th>App Version</th>
+    <th>User</th>
     <th>Error</th>
     <th></th>
   </tr>
   
   <% @errors.each do |error| %>
-    <% json = JSON.parse(error.payload) %>
+    <% json = error.parsed_payload %>
     <tr>
-      <td><%= error.created_at %></td>
-      <td><%= json["STACK_TRACE"].lines.first %></td>
+      <td><%= l(error.created_at) %></td>
+      <td><%= json["APP_VERSION_NAME"] %></td>
+      <td><%= error.parsed_custom_data["USER"].to_s %></td>            
+      <td><%= truncate(json["STACK_TRACE"].lines.first, length: 75) %></td>
       <td>
         <%= link_to "View", error, class: 'btn' %> 
         <%= link_to "Delete", error, class: 'btn btn-danger', method: :delete, confirm: "Are you sure?" %>

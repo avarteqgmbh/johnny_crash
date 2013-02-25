@@ -8,7 +8,7 @@ class ErrorsController < ApplicationController
   
   def show
     @error  = Error.find(params[:id])
-    @json   = JSON.parse(@error.payload)
+    @json   = @error.parsed_payload
   end
   
   def create
