@@ -14,11 +14,13 @@ class Error < ActiveRecord::Base
     return @parsed_custom_data if @pared_custom_data
     @parsed_custom_data = {}
     json = parsed_payload
-    custom_data = json["CUSTOM_DATA"]
-    custom_data.lines.each do |line|
-      mdata = /([A-Z]+) = (.*)/.match(line)
-      next unless mdata
-      @parsed_custom_data[mdata[1]] = mdata[2]
+    if json
+      custom_data = json["CUSTOM_DATA"]
+      custom_data.lines.each do |line|
+        mdata = /([A-Z]+) = (.*)/.match(line)
+        next unless mdata
+        @parsed_custom_data[mdata[1]] = mdata[2]
+      end
     end
     @parsed_custom_data
   end
