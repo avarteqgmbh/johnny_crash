@@ -4,7 +4,10 @@ class Error < ActiveRecord::Base
   default_scope order('created_at DESC')
   
   def parsed_payload
-    @parsed_payload ||= JSON.parse(self.payload)
+    begin
+      @parsed_payload ||= JSON.parse(self.payload)
+    rescue
+    end
   end
   
   def parsed_custom_data
