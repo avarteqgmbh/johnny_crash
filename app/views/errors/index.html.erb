@@ -14,7 +14,7 @@
     <tr>
       <td><%= l(error.created_at) %></td>
       <td><%= json.present? ? json["APP_VERSION_NAME"] : "JSON Error" %></td>
-      <td><%= error.parsed_custom_data["USER"].to_s %></td>            
+      <td><%= error.parsed_custom_data["USER"].to_s if error.parsed_custom_data["USER"] %></td>            
       <td><%= json.present? ? truncate(json["STACK_TRACE"].lines.first, length: 75) : "JSON Error" %></td>
       <td>
         <%= link_to "View", error, class: 'btn' %> 
