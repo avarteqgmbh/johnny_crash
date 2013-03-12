@@ -3,7 +3,7 @@ class ErrorsController < ApplicationController
   before_filter :authenticate, except: [:create]
   
   def index
-    @errors = Error.last(100)
+    @errors = Error.all
   end
   
   def show
