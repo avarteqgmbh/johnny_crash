@@ -3,7 +3,7 @@ class ErrorsController < ApplicationController
   before_filter :authenticate, except: [:create]
   
   def index
-    @errors = Error.all
+    @errors = Error.page(params[:page]).per(100)
   end
   
   def show

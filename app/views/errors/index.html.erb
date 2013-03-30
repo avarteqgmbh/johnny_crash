@@ -1,5 +1,7 @@
 <h1>Errors</h1>
 
+<%= paginate @errors %>
+
 <table class="table">
   <tr>
     <th>Created At</th>
@@ -8,7 +10,7 @@
     <th>Error</th>
     <th></th>
   </tr>
-  
+
   <% @errors.each do |error| %>
     <% json = error.parsed_payload %>
     <tr>
@@ -23,3 +25,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= paginate @errors %>
