@@ -1,5 +1,7 @@
 .rvmrc
 .rbenv-version
+.ruby-gemset
+.ruby-version
 .bundle
 .autotest 
 .idea
