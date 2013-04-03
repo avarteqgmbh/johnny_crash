@@ -22,3 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'capistrano'
+end
