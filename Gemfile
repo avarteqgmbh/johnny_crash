@@ -24,5 +24,5 @@ end
 gem 'jquery-rails'
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', "~> 2.14"
 end
