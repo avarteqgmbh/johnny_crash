@@ -11,7 +11,7 @@ class Error < ActiveRecord::Base
   end
   
   def parsed_custom_data
-    return @parsed_custom_data if @pared_custom_data
+    return @parsed_custom_data if @parsed_custom_data
     @parsed_custom_data = {}
     json = parsed_payload
     if json
